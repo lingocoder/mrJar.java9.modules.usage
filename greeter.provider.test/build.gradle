@@ -1,0 +1,4 @@
+dependencies {
+    api project(':greeter.api')
+    implementation project(':greeter.provider')
+}

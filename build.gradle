@@ -1,0 +1,60 @@
+plugins{ 
+    id 'com.lingocoder.mrjar' version '0.0.6' apply false
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE' apply false
+    id 'com.github.hierynomus.license-base' version '0.15.0' apply false
+    id 'java-library'
+}
+
+allprojects {
+    apply plugin: 'com.lingocoder.mrjar'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'com.github.hierynomus.license-base'
+    apply plugin: 'java-library'
+
+    ext { springBootVersion = '2.1.7.RELEASE' }
+
+    group = 'com.lingocoder'
+    version = '0.0.1'
+    description = 'Demonstrates how to use the lingocoder mrJar Gradle plugin to compile and package a Modular MRJAR file'
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    repositories {
+        jcenter( )
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+
+        testLogging {
+            events 'PASSED', 'FAILED', 'SKIPPED'
+        }
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+        testImplementation 'org.junit.jupiter:junit-jupiter-params:5.2.0'
+        testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+    }
+    
+    dependencyManagement {
+        imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+    }
+
+    license { header = file('src/main/resources/META-INF/LICENSE-HEADER.txt') }
+
+    license {
+        excludes(["**/*.txt", "**/*keep*.*", "**/*.gradle*", "**/*.*ignore", "**/*.properties"])
+
+        ext.year = Calendar.getInstance().get(Calendar.YEAR)
+        ext.name = 'lingocoder'
+        ext.email = 'plugins@lingocoder.com'
+
+        skipExistingHeaders = true
+    }
+    
+}

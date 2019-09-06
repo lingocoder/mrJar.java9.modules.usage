@@ -1,0 +1,14 @@
+plugins{ 
+    id 'application'
+}
+
+dependencies {
+    api project(':greeter.api')
+    implementation project(':greeter.provider')
+}
+
+mrjar{ 
+    releases = [JavaVersion.VERSION_11]
+    moduleName = 'greeter.runner'
+    main = 'examples.Runner'
+}
