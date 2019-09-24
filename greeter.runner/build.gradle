@@ -8,7 +8,7 @@ dependencies {
 }
 
 mrjar{ 
-    releases = [JavaVersion.VERSION_11]
     moduleName = 'greeter.runner'
     main = 'examples.Runner'
+    isModular = true
 }

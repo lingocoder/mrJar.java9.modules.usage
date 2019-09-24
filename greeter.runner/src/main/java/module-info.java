@@ -22,6 +22,7 @@ module greeter.runner {
 
     requires greeter.api;
     requires spring.core;
+		requires java.sql;
 
     uses Greeter;
 }

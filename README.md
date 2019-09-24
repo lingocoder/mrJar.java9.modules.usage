@@ -22,7 +22,14 @@ The most important take away from this *mrJar.java9.modules.usage* demo, is how 
     22 actionable tasks: 22 executed
 
     ```   
-
+4. Additionally, you can run the *`greeter.runner`* project with:
+    ```
+    gradlew greeter.runner:run
+    
+    [system.out] 
+    [system.out] Hello and welcome!
+    [org.gradle.process.internal.DefaultExecHandle] Changing state to: SUCCEEDED
+    ```
 
 ## Where Can I Find Out More?
 

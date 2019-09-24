@@ -20,6 +20,7 @@ import examples.greeter.api.Greeter;
 
 module greeter.provider {
     requires greeter.api;
+		exports examples.greeter to spring.core;
 
     provides Greeter with examples.greeter.Friendly;
 }
