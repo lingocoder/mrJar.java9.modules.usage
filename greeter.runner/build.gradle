@@ -12,3 +12,17 @@ mrjar{
     main = 'examples.Runner'
     isModular = true
 }
+
+task printCompileJava{
+    doLast{
+	    println "$name's compiler options ---"
+		println ""
+		project['tasks']['compileJava11Java']['options']['compilerArgs'].each{ println "   " + it}
+		println ""
+		println ""
+		println "$name's classpath ---"
+
+		project['tasks']['compileJava11Java']['classpath']['files'].each{ println "   " + it }
+
+	}
+}

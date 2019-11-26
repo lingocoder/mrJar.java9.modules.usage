@@ -1,3 +1,14 @@
+/*
+pluginManagement{
+
+    repositories{
+        maven{
+            url 'file:///z:/staging/consuming/maven-repo'
+        }
+        gradlePluginPortal( )
+        mavenLocal( )
+    }
+}*/
 rootProject.name = 'mister.jar.plugin.usage'
 
 include 'greeter.api'

@@ -1,3 +1,5 @@
+mrjar{ packages = ['examples.greeter'] }
+
 dependencies {
     api project(':greeter.api')
 }

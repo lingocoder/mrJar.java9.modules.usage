@@ -1,5 +1,5 @@
 plugins{ 
-    id 'com.lingocoder.mrjar' version '0.0.13' apply false
+    id 'com.lingocoder.mrjar' version '0.0.16' apply false
     id 'io.spring.dependency-management' version '1.0.8.RELEASE' apply false
     id 'com.github.hierynomus.license-base' version '0.15.0' apply false
     id 'java-library'
@@ -10,7 +10,7 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'com.github.hierynomus.license-base'
     apply plugin: 'java-library'
-
+    mrjar{ excludes = ['hamcrest-core', 'spring-boot-starter-test', 'android-json'] }
     ext { springBootVersion = '2.1.7.RELEASE' }
 
     group = 'com.lingocoder'
